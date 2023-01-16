@@ -1,0 +1,27 @@
+@media screen and (min-width: 990px) {
+  .showTablet {
+    display: none !important;
+  }
+  
+  .header.header--top-left {
+    grid-template-areas:
+        "heading search icons"
+        "navigation navigation navigation";
+    grid-template-columns: 1fr 2fr 1fr;
+  }
+  
+  .header predictive-search.header-search {
+    grid-area: search;
+    justify-self: center;
+  }
+
+  .header__inline-menu {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 989px) {
+  .header predictive-search.header-search {
+    display: none;
+  }
+}

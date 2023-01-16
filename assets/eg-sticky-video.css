@@ -1,0 +1,41 @@
+/* 
+    EG Sticky Video
+    © 2022 EcomGraduates
+    https://wwww.ecomgraduates.com 
+*/
+
+#eg-sticky-video {
+    position: relative;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    z-index: 9;
+}
+
+#eg-sticky-video video {
+    display: block;
+    max-width: 100%;
+    transition: all .2s ease-out;
+}
+
+#eg-sticky-video video:hover {
+}
+
+#eg-sticky-video-close-btn {
+    position: absolute;
+    top: .25rem;
+    right: .25rem;
+    display: flex;
+    background-color: rgba(0, 0, 0, .75);
+    padding: 0;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all .2s ease-out;
+}
+
+#eg-sticky-video-close-btn:hover {
+    background-color: rgba(0, 0, 0, 1);
+}

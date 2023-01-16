@@ -1,0 +1,175 @@
+/* 
+    EG Age Check
+    © 2022 EcomGraduates
+    https://wwww.ecomgraduates.com 
+*/
+
+/*
+    Micromodal
+*/
+/**************************\
+  Basic Modal Styles
+\**************************/
+.micromodal {
+    visibility: hidden;
+}
+
+.micromodal.is-open {
+    visibility: visible;
+}
+  
+.micromodal__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, .5);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .2s ease-out;
+}
+
+.micromodal.is-open .micromodal__overlay {
+    visibility: visible;
+    opacity: 1;
+    transition: all .2s ease-out;
+}
+    
+.micromodal__container {
+    background-color: #fff;
+    padding: 1.5rem;
+    margin: 1rem;
+    max-width: 500px;
+    max-height: 100vh;
+    border-radius: 4px;
+    overflow-y: auto;
+    box-sizing: border-box;
+    transition: all .2s ease-out;
+    transform: scale(0);
+}
+
+.micromodal.is-open .micromodal__container {
+    transform: scale(1);
+}
+
+@media (min-width: 600px) {
+    .micromodal__container {
+        padding: 3rem;
+    }
+}
+   
+.micromodal__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+.micromodal__title {
+    margin: 0 0 .75rem;
+}
+  
+.micromodal__close {
+    background: transparent;
+    border: 0;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    cursor: pointer;
+    margin-right: -1rem;
+    font-size: 16px;
+    transition: all .2s ease-out;
+    opacity: .75;
+}
+
+.micromodal__close:hover {
+    opacity: 1;
+}
+
+.micromodal__header .micromodal__close:before { 
+    content: "\2715"; 
+}
+  
+.micromodal__content {
+    line-height: normal;
+}
+
+.micromodal__content .rte {
+    margin-bottom: 1.75rem;
+}
+  
+.micromodal__btn {
+    width: 100%;
+}
+
+
+/* Trigger Button */
+#eg-promo-slider-btn-trigger {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border-color: transparent;
+    transition: all .2s ease-out;
+    
+}
+
+#eg-promo-slider-btn-trigger:hover,
+#eg-promo-slider-btn-trigger:focus {
+    background-color: var(--bg-color-hover);
+    border-color: transparent;
+    color: white;
+}
+
+#eg-promo-slider-btn-trigger span {
+    animation: eg_promo_slider_btn_trigger 1s linear alternate infinite;
+}
+
+#eg-promo-slider-btn-trigger:hover span {
+    animation-play-state: paused;
+}
+
+@keyframes eg_promo_slider_btn_trigger {
+    from {
+        transform: translateX(-3px);
+    }
+    to {
+        transform: translateX(3px);
+    }
+}
+
+
+/*
+    Micromodal style overrides
+*/
+#eg-age-check-modal .micromodal__header {
+    justify-content: center;
+}
+
+#eg-age-check-modal .micromodal__content {
+    margin: 0 0 2rem;
+    text-align: center;
+}
+
+
+/*
+    Input fields
+*/
+#eg-age-check-form {
+    display: flex;
+}
+
+#eg-age-check-form input {
+    padding: .75rem;
+    border: 1px solid rgba(0, 0, 0, .25);
+    margin: .25rem;
+    width: calc(33.33% - .5rem);
+}
